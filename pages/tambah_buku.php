@@ -77,18 +77,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <!-- Katergori Section -->
         <div class="mb-3">
             <label for="kategori" class="form-label">Pilih Kategori Buku</label><br>
+            <?php
+
+                $sql_kategori = "SELECT * FROM kategori ORDER BY nama_kategori ASC";
+                $result_kategori = $mysqli->query($sql_kategori);
+
+            ?>
+
+            <?php while($kat = $result_kategori->fetch_assoc()) : ?>
             <label for="" class="me-3">
-                <?php
 
-                    $sql_kategori = "SELECT * FROM kategori ORDER BY nama_kategori ASC";
-                    $result_kategori = $mysqli->query($sql_kategori);
-
-                ?>
-
-                <?php while($kat = $result_kategori->fetch_assoc()) : ?>
                 <input type="checkbox" name="kategori[]" value="<?php echo $kat['id_kategori'] ?>"><?php echo $kat['nama_kategori']?></input> 
-                <?php endwhile; $mysqli->close(); ?>
+                
             </label>
+            <?php endwhile; $mysqli->close(); ?>
         </div>
         <!-- End OF Kategori -->
         <div class="mb-3">

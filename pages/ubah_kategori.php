@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <div class="container-fluid px-4">
     <h1 class="mt-4">Kategori</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Tambah Kategori</li>
+        <li class="breadcrumb-item active">Ubah Kategori</li>
     </ol>
     <?php if(!empty($pesan)) : ?>
     <div class="alert alert-success" role="alert">
